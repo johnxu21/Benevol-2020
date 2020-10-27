@@ -1,0 +1,121 @@
+\documentclass[conference]{IEEEtran}
+%\IEEEoverridecommandlockouts
+% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,urlcolor=black,linkcolor=black,citecolor=black}
+\renewcommand{\sectionautorefname}{Section}
+\usepackage{enumitem}
+\usepackage{balance}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{subcaption}
+\usepackage{adjustbox}
+\usepackage{multirow}
+% \usepackage{subfigure}
+% \usepackage{subfig}
+\usepackage{threeparttable}
+%\usepackage{siunitx}
+\usepackage{microtype}
+\usepackage{relsize,xspace}
+\usepackage{cite}
+\usepackage{textcomp}
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+\newcommand{\variants}{\textit{Variants}}
+\newcommand{\pullrequestsmlvfv}{\ensuremath{\textit{PullRequest}_\textit{MLV-FV}}\xspace}
+\newcommand{\pullrequestsfvmlv}{\ensuremath{\textit{PullRequest}_\textit{FV-MLV}}\xspace}
+\newcommand{\pullrequestsfvfv}{\ensuremath{\textit{PullRequest}_\textit{FV-FV}}\xspace}
+\newcommand{\StartingCommits}{\ensuremath{\textit{StartingCommits}}\xspace}
+\newcommand{\StartingCommitsCdLOC}{\ensuremath{\textit{StartingCommits}_\textit{cdLOC}}\xspace}
+\newcommand{\pullrequestscommlvfv}{\ensuremath{\textit{PullRequestsCom}_\textit{MLV-FV}}\xspace}
+\newcommand{\pullrequestscomfvmlv}{\ensuremath{\textit{PullRequestsCom}_\textit{FV-MLV}}\xspace}
+\newcommand{\DirectPullCom}{\ensuremath{\textit{DirectPullCom}_\textit{MLV-FV}}\xspace}
+\newcommand{\VariabilityPercentage}{\ensuremath{\textit{VariabilityPercentage}}\xspace}
+\newcommand{\VariabilityPercentageloc}{\ensuremath{\textit{VariabilityPercentage}_\textit{cdLOC}}\xspace}
+\newcommand{\UniqueCom}{\ensuremath{\textit{UniqueCom}}\xspace}
+\newcommand{\UniqueCdLOC}{\ensuremath{\textit{Unique}_\textit{cdLOC}}\xspace}
+\newcommand{\MergedCom}{\ensuremath{\textit{MergedCom}}\xspace}
+\newcommand{\MergedCdLOC}{\ensuremath{\textit{MergedCdLOC}}\xspace}
+
+\newcommand{\TotalDevMLV}{\ensuremath{\textit{TotalDevMLV}}\xspace}
+\newcommand{\TotalDevFV}{\ensuremath{\textit{TotalDevFV}}\xspace}
+\newcommand{\CommonDevs}{\ensuremath{\textit{CommonDevs}}\xspace}
+\newcommand{\TotalDevs}{\ensuremath{\textit{TotalDevs}}\xspace}
+\newcommand{\Duration}{\ensuremath{\textit{Duration}}\xspace}
+\newcommand{\ForkVariantBacklog}{\ensuremath{\textit{ForkVariantBacklog}}\xspace}
+\newcommand{\Inactivity}{\ensuremath{\textit{Inactivity}}\xspace}
+\newcommand{\Category}{\ensuremath{\textit{Category}}\xspace}
+\newcommand{\Description}{\ensuremath{\textit{Description}}\xspace}
+
+\newcommand{\secref}[1]{Section~\ref{#1}}
+\newcommand{\figref}[1]{Fig.~\ref{#1}}
+\newcommand{\Figref}[1]{Figure~\ref{#1}} %use if at beginning of sentence
+\newcommand{\tabref}[1]{Table~\ref{#1}}
+\newcommand{\lstref}[1]{Listing~\ref{#1}}
+
+\newcommand{\compactlist}{\setlength{\itemsep}{0pt} \setlength{\parskip}{0pt}}
+\newcommand\parhead[1]{\vspace{.26mm}\noindent\textbf{{#1}}.}
+
+\newcommand{\jb}[1]{{\textsf{JB}[\smaller\sffamily\color{red} #1}]}
+
+\newcommand{\gh}{\textit{GitHub}\xspace}
+\newcommand{\gl}{\textit{GitLab}\xspace}
+\newcommand{\bb}{\textit{BitBucket}\xspace}
+\newcommand{\np}{\textit{npm}\xspace}
+\newcommand{\scp}{\textit{SCP}\xspace}
+\newcommand{\go}{\textit{Go}\xspace}
+\newcommand{\js}{\textit{JavaScript}\xspace}
+
+\newcommand{\npm}{{a package distribution platform}\xspace}
+%\newcommand{\tb}[1]{}
+%\newcommand{\sn}[1]{}
+%\newcommand{\jb}[1]{}
+
+
+\begin{document}
+
+\title{Forks as Variants}
+
+
+\author{\IEEEauthorblockN{John Businge,\IEEEauthorrefmark{1}
+		Alexandre Decan,\IEEEauthorrefmark{2}
+	Ahmed Zerouali,\IEEEauthorrefmark{3} and
+	Tom Mens\IEEEauthorrefmark{2}}
+	\IEEEauthorblockA{\IEEEauthorrefmark{1}University of Antwerp, Antwerp, Belgium}
+	\IEEEauthorblockA{\IEEEauthorrefmark{2}University of Mons, Mons, Belgium}
+	\IEEEauthorblockA{\IEEEauthorrefmark{3} Vrije Universiteit Brussels, Brussels, Belgium}
+	}
+
+
+
+\maketitle
+
+\begin{abstract}
+
+\end{abstract}
+
+\begin{IEEEkeywords}
+software variants, npm, depandencies, software ecosystems
+\end{IEEEkeywords}
+
+\input{introduction}
+
+\input{methodology}
+
+\input{results}
+
+\input{conclusion}
+
+
+\balance
+% references section
+
+\bibliographystyle{IEEEtran}
+\bibliography{biblio}
+
+
+\end{document}

@@ -1,25 +1,27 @@
 \section{Methodology and Terminology}
 \label{sec:method}
-According to the 2020 Stack Overflow Developer Survey\footnote{https://insights.stackoverflow.com/survey/2020} to which over 65,000 developers participated, \js is one the most commonly used programming language (accounting for 58.3\%). In addition, the \texttt{npm} package distribution platform was observed to have a higher distribution of package dependencies than other package distributions\cite{Decan:2019:emse}.  
-For these reasons we selected \texttt{npm} for our empirical study.
+According to the 2020 Stack Overflow Developer Survey\footnote{https://insights.stackoverflow.com/survey/2020} to which over 65,000 developers participated, \js is one the most commonly used programming language (accounting for 58.3\%\note{of what?}). In addition, the \np package distribution platform was observed to have a higher distribution of package dependencies than other package distributions\cite{Decan:2019:emse}.
+For these reasons we selected \texttt{npm} for our empirical study.\note{I don't get the link between the number of dependencies and the choice of \np. I think, correct me if I'm wrong, the fact that \np is one of the largest collection of (active) packages is enough as a motivation to select it.}
+
 Let us present the terminology and notations that will be used in the remainder of this paper:
 
 \begin{itemize}
     \item \textbf{Mainline.} A repository that is hosted on \scp whose package is distributed on the \npm.
-    
+
     \item \textbf{Variant.} A fork repository of the \textbf{mainline} that is hosted on \scp whose package is distributed on the \npm.
-    
+
     \item \textbf{Software family.} As set of two or more repositories (mainline and its corresponding variants) that are hosted on \scp and distributed on the \npm. Both the mainline and its variants need to exist on both on the \npm to qualify to be a family.
-    
+
+    \note{(for what follows) do we really need mathematical notations, and a true formalisation of these concepts? It seems we are not even using the notations in the RQs. }
     \item \textbf{Release.} Let $E$ be a package distribution, i.e., a set of packages. Given a package $p\in E$, releases($p$) denotes the set of releases of $p$. Every release $r\in$ releases($p$) has a release date $r_{date}$ and a version $r_{version}$.
-    
+
      \item \textbf{Dependency.} A release $r$ has a (potentially empty) set $r_{deps}$ of dependencies. A dependency $d \in r_{deps}$ is defined as a pair($d_{target}$, $d_{constraint}$) composed of a target package $d_{target} \in E$ and a dependency constraint $d_{constraint}$ over the releases in releases ($d_{target}$).
-    
+
     \item \textbf{Dependent.} We identify two types of dependents: package and project. A package is one that is distributed in a package manager (e.g., \np, \texttt{Pypl}). A package $A$ depending on a package $B$ is a ``dependent package of $B$''. By definition, both $A$ and $B$ are distributed in a package distribution platform. A project is a repository in which a package is developed, but not necessarily distributed in a package distribution platform. By extension, a project $A$ depending on a package $B$ is a ``dependent project''. In this case, $B$ is distributed in a package distribution platform, but not necessarily $A$.
-    
+
 \end{itemize}
 
-\textbf{Dataset}. Our dataset was extracted from the 2019-02-02 dump of the open source discovery service \texttt{libraries.io}\cite{libraries.io}. On \texttt{libraries.io}, we use the following heuristics to extract the software families: The repository $A$ is a variant of the repository $B$ if (1) $A$ and $B$ are distributed on \npm, and (2) $A$ is a fork--of $B$ on \scp. Since we focus on the \js ecosystem on \gh, we extracted software families whose repositories are hosted on \gh and their packages distributed on the \np package distribution platform. For each \textbf{mainline} and its corresponding \textbf{variants} we collected their \textbf{releases}, \textbf{dependencies} and \textbf{dependents} (projects and packages). 
+\textbf{Dataset}. Our dataset was extracted from the 2019-02-02 dump of the open source discovery service \texttt{libraries.io}\cite{libraries.io}. On \texttt{libraries.io}, we use the following heuristics to extract the software families: The repository $A$ is a variant of the repository $B$ if (1) $A$ and $B$ are distributed on \npm, and (2) $A$ is a fork--of $B$ on \scp. Since we focus on the \js ecosystem on \gh, we extracted software families whose repositories are hosted on \gh and their packages distributed on the \np package distribution platform. For each \textbf{mainline} and its corresponding \textbf{variants} we collected their \textbf{releases}, \textbf{dependencies} and \textbf{dependents} (projects and packages).
 
 
 

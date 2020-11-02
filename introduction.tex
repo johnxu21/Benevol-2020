@@ -32,25 +32,27 @@ The  family members have software artefacts in common, but also contain artefact
 \end{figure}
 
 Figure~\ref{fig:forking} illustrates the development activities on a repository before and after variant forking.
-On the left part of the figure, we can see that there are three core developers: Alice, Bob and Tom who have write access to the mainline repository.
-The community interacts with the mainline through the following channels: sending pull requests, submitting issues and conducting change reviews.
-After variant forking, on the right part of the figure, the core developers are split into two.
-Alice and Bob remain with the mainline and Tom who is joined by a new developer Jeff starts maintaining a parallel project the fork variant.
-As can be seen, the parallel projects mainline and variant have split the contributing community. New contributors could decide to contribute to mainline or variant, for instance depending on the one which is more accommodative to contributions.
-Furthermore, as a result of parallel maintenance, developers in one of the projects may identify and fix bugs in shared artifacts.
-These fixes could be propagated to other members of the family to avoid effort duplication.
+On the left, we can see three core developers (Alice, Bob and Tom) that have write access to the mainline repository.\tom{If Alex, Bob and Tom have write access, then why do they have to go through the pull/push mechanism? Isn't it also possible or them to do direct commits?}
+The community interacts with the mainline by sending pull requests, submitting issues and conducting change reviews.
+After variant forking, shown on the right, the core developers are split into two.
+Alice and Bob remain with the original mainline, while Tom is joined by a new developer Jeff to maintain a new fork variant in parallel to the mainline project.
+This parallel development between mainline and variant has split the contributing community. New contributors could decide to contribute to the mainline or the variant, for instance depending on which one is more open to accommodate newcomers.
+Furthermore, as a result of parallel maintenance, developers in one of the projects may identify and fix bugs in shared artefacts.\tom{Why would there be any shared artefacts if the split/fork is not a social fork?}
+These fixes could be propagated to other members of the family to avoid effort duplication.\tom{Why would there be any incentive to propagate fixes if the variant forks are not social forks?}
 
-Many studies have researched on variant forks; however, most of these studies were carried out in the pre-\scp days of \texttt{SourceForge}, before the advent of social coding environment~\cite{Linus:2012Perspectives,Gregorio:2012,Viseur:2012Forks,Linus:2013CodeForking,Laurent:2008,Linus:2011ToFork}.
-We have found only two studies that have investigated variant forks on \gh~\cite{businge2018appfamilies,Zhou:2020}.
-While studies report controversial perceptions around hard forks in the pre-\gh days~\cite{Chua:Forking:2017,Dixion:2009Forks,Ernst:2010,Linus:2011ToFork,Linus:2014Hackers,Raymond:Cathedral:2001}, Zhou et al.~\cite{Zhou:2020} report that these perceptions have changed with the advent of \gh. Jiang et al.~\cite{Lo:2017} state that, although forking is controversial in traditional open source software (OSS) community, it is encouraged and is a built-in feature in \gh. Jiang et al. ~\cite{Lo:2017} further report that developers fork repositories to submit pull requests, fix bugs, add new features and keep copies (social forks).
-Zhou et al.~\cite{Zhou:2020} also report that most variant forks start as social forks.
+There have been many studies on variant forks. However, most of these studies were carried out on \texttt{SourceForge}~\cite{Linus:2012Perspectives,Gregorio:2012,Viseur:2012Forks,Linus:2013CodeForking,Laurent:2008,Linus:2011ToFork}, before the advent of social coding platforms such as \gh.
+We have found only two studies that investigated variant forks on \gh~\cite{businge2018appfamilies,Zhou:2020}.
+While the pre-\gh studies report controversial perceptions around hard forks~\cite{Chua:Forking:2017,Dixion:2009Forks,Ernst:2010,Linus:2011ToFork,Linus:2014Hackers,Raymond:Cathedral:2001},\tom{You introduce the term "hard forks" but this term has not been introduced before...}
+According to Zhou et al.~\cite{Zhou:2020} these perceptions have changed with the advent of \gh. Jiang et al.~\cite{Lo:2017} state that, although forking is controversial in traditional open source software (OSS) communities, it is actually encouraged as a built-in feature in \gh. Jiang et al. ~\cite{Lo:2017} further report that developers fork repositories to submit pull requests, fix bugs, add new features and keep copies (social forks).
+Zhou et al.~\cite{Zhou:2020} also report that many variant forks actually start as social forks.
 
-While numerous studies have investigated variant forking, we do not know any study that has investigated the socio-technical specificities of these variant forks.
-Our research aims at empirically studying the evolution of \textbf{software families} by investigating their socio-technical aspects.
+While numerous studies have investigated variant forking, we are not aware of any study that has investigated the socio-technical specificities of these variant forks.
+Our research therefore aims at empirically studying the evolution of \textbf{software families} composed of variant project repositories by investigating their socio-technical aspects.
 For the social aspects, it would be interesting to look at the interaction and collaboration between communities involved in the mainline and variants.
 How different are collaborations with respect to who forked and how the fork has been created?
-For the technical aspects, as an example, considering the dependent packages, it would be interesting to investigate if developers migrate from one variant of the required package to another in a family.
-As preliminary steps, in this paper we investigate the socio-technical aspects of forking in the \np package distribution platform, the largest collection of \js packages. More specifically, we focus on three research questions:
+For the technical aspects, as an example, considering the dependent packages,\tom{This notion of dependent packages seems to come from nowhere...} it would be interesting to investigate if developers migrate from one variant of the required package to another in a family.
+As a preliminary step, this paper investigates the socio-technical aspects of forking in the \np package distribution platform, the largest collection of \js packages.\tom{It is unclear to me how this focus on \np is linked to \gh repositories, since you do not explicitly mention this anywhere.}
+ More specifically, we focus on three research questions:
 \begin{itemize}
 \item[\textbf{RQ0}] \textit{How prevalent are software families in \np?}
 We determine whether the research goal is worthwhile to pursue: if software families rarely exist, results about their social-technical evolution may not be statistically significant.

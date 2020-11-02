@@ -5,17 +5,26 @@ According to the 2020 Stack Overflow Developer Survey\footnote{https://insights.
 In addition, the \np package distribution platform was observed to have a higher distribution of package dependencies than other package distributions\cite{Decan:2019:emse}.
 For these reasons we selected \texttt{npm} for our empirical study.\note{I don't get the link between the number of dependencies and the choice of \np. I think, correct me if I'm wrong, the fact that \np is one of the largest collection of (active) packages is enough as a motivation to select it.}
 
-Let us present the terminology and notations that will be used in the remainder of this paper:
+Let us present the terminology and notations that will be used in the remainder of this paper:\tom{While I agree to introduce terminology, it is a bit too much to introduce "notations" in a 4 page extended abstract.}
 
 \begin{itemize}
-    \item \textbf{Mainline.} A repository that is hosted on \scp whose package is distributed on \npm.
+    \item \textbf{Mainline.} A repository that is hosted on \scp 
+    \tom{I would say "hosted on \gh" since this the only \scp that you are actually studying here, right. \scp is therefore too generic here.}
+    whose package is distributed on \np.
 
-    \item \textbf{Variant.} A fork repository of the \textbf{mainline} that is hosted on \scp whose package is distributed on \npm.
+    \item \textbf{Variant.} A fork repository of the \textbf{mainline} that is hosted on \scp
+    \tom{I would say "hosted on \gh"}
+    whose package is distributed on \np.
 
-    \item \textbf{Software family.} As set of two or more repositories (mainline and its corresponding variants) that are hosted on \scp and distributed on \npm. Both the mainline and its variants need to exist on both on \np to qualify to be a family.
+    \item \textbf{Software family.} As set of two or more repositories (the mainline and its variants) that are hosted on \scp
+    \tom{I would say "hosted on \gh"}
+    and distributed on \np.
+    Both the mainline and its variants need to exist on both on \np to be considered as a software family in this paper.
 
     \note{(for what follows) do we really need mathematical notations, and a true formalisation of these concepts? It seems we are not even using the notations in the RQs. }
-    \item \textbf{Release.} Let $E$ be a package distribution, i.e., a set of packages. Given a package $p\in E$, releases($p$) denotes the set of releases of $p$. Every release $r\in$ releases($p$) has a release date $r_{date}$ and a version $r_{version}$.
+    \tom{I agree that for a short 4-page paper it is not necessary to have formal definitions. Especially if we do not use them later on.}
+    
+    \item \textbf{Release.} Let $E$ be a package distribution, i.e., a set of packages. Given a package $p\in E$, releases($p$) denotes the set of releases of $p$. Every release $r\in$ releases ($p$) has a release date $r_{date}$ and a version $r_{version}$.
 
      \item \textbf{Dependency.} A release $r$ has a (potentially empty) set $r_{deps}$ of dependencies. A dependency $d \in r_{deps}$ is defined as a pair($d_{target}$, $d_{constraint}$) composed of a target package $d_{target} \in E$ and a dependency constraint $d_{constraint}$ over the releases in releases ($d_{target}$).
 

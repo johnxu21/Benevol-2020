@@ -22,6 +22,18 @@
 \usepackage{relsize,xspace}
 \usepackage{cite}
 \usepackage{textcomp}
+
+%use the following command to DISABLE all to do notes and comments
+%\usepackage[disable]{todonotes}
+%use the following command to ENABLE all to do notes and comments
+\usepackage[]{todonotes}
+
+\newcommand{\tom}[1]{\todo[color=blue!40, inline]{\footnotesize{Tom: #1}}}
+\newcommand{\alex}[1]{\todo[color=orange!40, inline]{\footnotesize{Alex: #1}}}
+\newcommand{\john}[1]{\todo[color=green!40, inline]{\footnotesize{John: #1}}}
+\newcommand{\ahmed}[1]{\todo[color=purple!40, inline]{\footnotesize{Ahmed: #1}}}
+
+
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 
@@ -62,13 +74,13 @@
 
 \newcommand{\jb}[1]{{\textsf{JB}[\smaller\sffamily\color{red} #1}]}
 
-\newcommand{\gh}{\textit{GitHub}\xspace}
-\newcommand{\gl}{\textit{GitLab}\xspace}
-\newcommand{\bb}{\textit{BitBucket}\xspace}
-\newcommand{\np}{\texttt{npm}\xspace}
+\newcommand{\gh}{\textsf{GitHub}\xspace}
+\newcommand{\gl}{\textsf{GitLab}\xspace}
+\newcommand{\bb}{\textsf{BitBucket}\xspace}
+\newcommand{\np}{\textsf{npm}\xspace}
 \newcommand{\scp}{\textit{SCP}\xspace}
-\newcommand{\go}{\textit{Go}\xspace}
-\newcommand{\js}{\textit{JavaScript}\xspace}
+\newcommand{\go}{\textsf{Go}\xspace}
+\newcommand{\js}{\textsf{JavaScript}\xspace}
 
 \newcommand{\npm}{{the \np package distribution platform}\xspace}
 %\newcommand{\tb}[1]{}

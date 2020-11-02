@@ -1,36 +1,37 @@
 \section{Introduction}
 Software is becoming increasingly complex and at the same time increasingly safety critical in many domains (e.g., in robotics, autonomous systems such as cars, data-processing software, apps on mobile phones, etc.)
+\tom{I do not see the purpose of talking about safety critical here, since this is not the focus at all of your paper...}
 
-To tackle these challenges \note{which ones?}, developers need to reuse code and collaborate effectively.
-Social coding platforms (\scp) comprise a number of so-called ecosystems i.e., large collections of interdependent software components that are maintained by large and geographically distributed communities of collaborating contributors~\cite{lungu:2008,decan:2017}.
+To tackle these challenges \note{which ones?}\tom{Indeed...}, developers rely on code reuse and distributed collaborative development tools.
+Social coding platforms (\scp)\tom{I do not see a need for the abbreviation SCP. In fact I have never seen this abbreviation used before, meaning it is not a common one. Moreover, the only one you will focus on in this paper is \gh, right?}
+
+ comprise a number of so-called ecosystems\tom{I do not know what is mentioned by "\scp comprise ecosystems"}
+  i.e., large collections of interdependent software components that are maintained by large and geographically distributed communities of collaborating contributors~\cite{lungu:2008,decan:2017}.
 The ecosystems form large socio-technical networks of technical and social components that interact with each other on top of common software and hardware platforms.
 The unprecedented growth of these ecosystems relies on substantial software reuse using different methods and tools \cite{mojica2014large}.
-\scp have substantially improved the situation on both the code reuse and collaboration, providing a huge bazaar of software and parts of software that can be reused through software repository forking and dependencies between projects; supported by the various facilities like pull requests, cross project traceabality, issue tracking systems (e.g. \texttt{JIRA}), source code reviews (e.g., \texttt{Gerrit}), Q\&A (e.g. \texttt{Stackoverflow}), continuous integration (e.g., \texttt{Travis CI}), and package distribution managers.
+Social coding has substantially improved  both code reuse and collaborative development, providing a huge bazaar of software projects and components that can be reused through explicit project dependencies or forking of software repositories. This is supported by various automated facilities such as pull requests, dependency management tools, issue tracking systems (e.g. \textsf{JIRA}), source code review tools (e.g., \textsf{Gerrit}), Q\&A services (e.g. \textsf{StackOverflow}), continuous integration tools (e.g., \textsf{Travis CI}), and package distribution managers (e.g., \np).
 
-
-
-
-Forking a software repository produces distinct entities: a \textit{mainline} (i.e., the original repository) and several \textit{forked} repositories.
-Two types of forks exist~\cite{Zhou:2020}: \textit{Social forks} are created for isolated development, but with the goal of contributing back to the mainline.
+Our research focuses on the phenomenon of forking in particular.
+Forking a software repository (referred to as the \textit{mainline}, i.e., the original repository) produces several \textit{forked} repositories.
+Two types of forks exist~\cite{Zhou:2020}. \textit{Social forks} are created for isolated development, but with the goal of contributing back to the mainline.
 \textit{Variant forks} are created for splitting off a new development branch, often to steer the development into another direction than the mainline, without the intention to contribute back.
 Variant forking may split the core development team and always splits the contributing community.
-Variant forking creates variants of the mainline, which share common code, but also contain variant-specific code that needs to be maintained.
-Such repositories represent families, inspired by the notion of \textit{software product lines}~\cite{berger.ea:2020:emse}.
-The family members (consisting of mainline and one or more variant forks) are called \textbf{software variants} or products (a subset of software ecosystems).
-They share common software artefacts as well as contain artefacts specific to one or multiple variants.
+Variant forking creates variants of the mainline repository, which share common code, but also contain variant-specific code that needs to be maintained.
+A mainline repository together with all its variant repositories can be seen as a software product family, inspired by the notion of \textit{software product lines}~\cite{berger.ea:2020:emse}.
+The  family members have software artefacts in common, but also contain artefacts that are specific to one or multiple variants.
 
 \begin{figure}[ht]
   \begin{center}
   \small
-  \vspace{-10pt}
+  %\vspace{-10pt}
     \includegraphics[width=0.5\textwidth]{figures/Collaboration.pdf}
   \end{center}
-  \caption{Maintenance of a repository before and after variant forking.}
-  \vspace{-10pt}
+  \caption{Maintenance of a software repository before (left) and after (right) variant forking.}
+  %\vspace{-10pt}
   \label{fig:forking}
 \end{figure}
 
-Figure~\ref{fig:forking} illustrates the maintenance of a repository before and after variant forking.
+Figure~\ref{fig:forking} illustrates the development activities on a repository before and after variant forking.
 On the left part of the figure, we can see that there are three core developers: Alice, Bob and Tom who have write access to the mainline repository.
 The community interacts with the mainline through the following channels: sending pull requests, submitting issues and conducting change reviews.
 After variant forking, on the right part of the figure, the core developers are split into two.
@@ -54,7 +55,7 @@ As preliminary steps, in this paper we investigate the socio-technical aspects o
 \item[\textbf{RQ0}] \textit{How prevalent are software families in \np?}
 We determine whether the research goal is worthwhile to pursue: if software families rarely exist, results about their social-technical evolution may not be statistically significant.
 
-\note{I'm missng the motivation for the three following RQs. If it's mainly exploratory, then we should state it, and explain why these questions are worth to consider (i.e., how the answer helps).}
+\note{I'm missing the motivation for the three following RQs. If it's mainly exploratory, then we should state it, and explain why these questions are worth to consider (i.e., how the answer helps).}
 \item[\textbf{RQ1}] \textit{How do the distributions of package releases in mainlines and their variants compare to each other? }
 This RQ will help us determine if mainlines and variants are continuously maintained.
 Do most variants have one-off releases?

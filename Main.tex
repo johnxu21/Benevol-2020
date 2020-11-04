@@ -26,12 +26,12 @@
 %use the following command to DISABLE all to do notes and comments
 %\usepackage[disable]{todonotes}
 %use the following command to ENABLE all to do notes and comments
-\usepackage[]{todonotes}
+% \usepackage[]{todonotes}
 
-\newcommand{\tom}[1]{\todo[color=blue!40, inline]{\footnotesize{Tom: #1}}}
-\newcommand{\alex}[1]{\todo[color=orange!40, inline]{\footnotesize{Alex: #1}}}
-\newcommand{\john}[1]{\todo[color=green!40, inline]{\footnotesize{John: #1}}}
-\newcommand{\ahmed}[1]{\todo[color=purple!40, inline]{\footnotesize{Ahmed: #1}}}
+% \newcommand{\tom}[1]{\todo[color=blue!40, inline]{\footnotesize{Tom: #1}}}
+% \newcommand{\alex}[1]{\todo[color=orange!40, inline]{\footnotesize{Alex: #1}}}
+% \newcommand{\john}[1]{\todo[color=green!40, inline]{\footnotesize{John: #1}}}
+% \newcommand{\ahmed}[1]{\todo[color=purple!40, inline]{\footnotesize{Ahmed: #1}}}
 
 
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
@@ -63,6 +63,8 @@
 \newcommand{\Category}{\ensuremath{\textit{Category}}\xspace}
 \newcommand{\Description}{\ensuremath{\textit{Description}}\xspace}
 
+\definecolor{Mycolor2}{HTML}{00F9DE}
+
 \newcommand{\secref}[1]{Section~\ref{#1}}
 \newcommand{\figref}[1]{Fig.~\ref{#1}}
 \newcommand{\Figref}[1]{Figure~\ref{#1}} %use if at beginning of sentence
@@ -72,7 +74,10 @@
 \newcommand{\compactlist}{\setlength{\itemsep}{0pt} \setlength{\parskip}{0pt}}
 \newcommand\parhead[1]{\vspace{.26mm}\noindent\textbf{{#1}}.}
 
-\newcommand{\jb}[1]{{\textsf{JB}[\smaller\sffamily\color{red} #1}]}
+\newcommand{\jb}[1]{{\textsf{John}[\smaller\sffamily\color{blue} #1}]}
+\newcommand{\tm}[1]{{\textsf{Tom}[\smaller\sffamily\color{red} #1}]}
+\newcommand{\ad}[1]{{\textsf{Decan}[\smaller\sffamily\color{Mycolor2} #1}]}
+\newcommand{\az}[1]{{\textsf{Ahmed}[\smaller\sffamily\color{orange} #1}]}
 
 \newcommand{\gh}{\textsf{GitHub}\xspace}
 \newcommand{\gl}{\textsf{GitLab}\xspace}
@@ -108,7 +113,7 @@
 
 \begin{abstract}
 
-\tom{Abstract appears to be missing still.}
+\tm{Abstract appears to be missing still.}
 
 \end{abstract}
 
@@ -124,9 +129,9 @@ software variants, npm, depandencies, software ecosystems
 
 \input{conclusion}
 
-\tom{Conclusion appears to be missing still.}
+\tm{Conclusion appears to be missing still.}
 
-\balance
+%\balance
 % references section
 
 \bibliographystyle{IEEEtran}

@@ -1,17 +1,9 @@
 \section{Introduction}
-Software is becoming increasingly complex and at the same time increasingly safety critical in many domains (e.g., in robotics, autonomous systems such as cars, data-processing software, apps on mobile phones, etc.)
-\tom{I do not see the purpose of talking about safety critical here, since this is not the focus at all of your paper...}
-
-To tackle these challenges \note{which ones?}\tom{Indeed...}, developers rely on code reuse and distributed collaborative development tools.
-Social coding platforms (\scp)\tom{I do not see a need for the abbreviation SCP. In fact I have never seen this abbreviation used before, meaning it is not a common one. Moreover, the only one you will focus on in this paper is \gh, right?}
-
- comprise a number of so-called ecosystems\tom{I do not know what is mentioned by "\scp comprise ecosystems"}
-  i.e., large collections of interdependent software components that are maintained by large and geographically distributed communities of collaborating contributors~\cite{lungu:2008,decan:2017}.
+Today, developing quality software faster developers rely on code reuse and distributed collaborative development tools. Social coding platforms like \gh have substantially improved  both code reuse and collaborative development, providing a huge bazaar of software projects and components that can be reused through explicit project dependencies or forking of software repositories. This is supported by various automated facilities such as pull requests, dependency management tools, issue tracking systems (e.g. \textsf{JIRA}), source code review tools (e.g., \textsf{Gerrit}), Q\&A services (e.g. \textsf{StackOverflow}), continuous integration tools (e.g., \textsf{Travis CI}), and package distribution managers (e.g., \np). Social coding platforms comprise a number of social software ecosystems i.e., large collections of interdependent software components that are maintained by large and geographically distributed communities of collaborating contributors~\cite{lungu:2008,decan:2017}.
 The ecosystems form large socio-technical networks of technical and social components that interact with each other on top of common software and hardware platforms.
 The unprecedented growth of these ecosystems relies on substantial software reuse using different methods and tools \cite{mojica2014large}.
-Social coding has substantially improved  both code reuse and collaborative development, providing a huge bazaar of software projects and components that can be reused through explicit project dependencies or forking of software repositories. This is supported by various automated facilities such as pull requests, dependency management tools, issue tracking systems (e.g. \textsf{JIRA}), source code review tools (e.g., \textsf{Gerrit}), Q\&A services (e.g. \textsf{StackOverflow}), continuous integration tools (e.g., \textsf{Travis CI}), and package distribution managers (e.g., \np).
 
-Our research focuses on the phenomenon of forking in particular.
+Our research focuses on the phenomenon of forking in particular in the software ecosystems.
 Forking a software repository (referred to as the \textit{mainline}, i.e., the original repository) produces several \textit{forked} repositories.
 Two types of forks exist~\cite{Zhou:2020}. \textit{Social forks} are created for isolated development, but with the goal of contributing back to the mainline.
 \textit{Variant forks} are created for splitting off a new development branch, often to steer the development into another direction than the mainline, without the intention to contribute back.
@@ -32,41 +24,96 @@ The  family members have software artefacts in common, but also contain artefact
 \end{figure}
 
 Figure~\ref{fig:forking} illustrates the development activities on a repository before and after variant forking.
-On the left, we can see three core developers (Alice, Bob and Tom) that have write access to the mainline repository.\tom{If Alex, Bob and Tom have write access, then why do they have to go through the pull/push mechanism? Isn't it also possible or them to do direct commits?}
+On the left, we can see three core developers (Alice, Bob and Tom) that have write access to the mainline repository.%\tom{If Alex, Bob and Tom have write access, then why do they have to go through the pull/push mechanism? Isn't it also possible or them to do direct commits?} 
+ \jb{push and pull is actually performing the direct commits in a shared repository}
 The community interacts with the mainline by sending pull requests, submitting issues and conducting change reviews.
 After variant forking, shown on the right, the core developers are split into two.
 Alice and Bob remain with the original mainline, while Tom is joined by a new developer Jeff to maintain a new fork variant in parallel to the mainline project.
 This parallel development between mainline and variant has split the contributing community. New contributors could decide to contribute to the mainline or the variant, for instance depending on which one is more open to accommodate newcomers.
-Furthermore, as a result of parallel maintenance, developers in one of the projects may identify and fix bugs in shared artefacts.\tom{Why would there be any shared artefacts if the split/fork is not a social fork?}
-These fixes could be propagated to other members of the family to avoid effort duplication.\tom{Why would there be any incentive to propagate fixes if the variant forks are not social forks?}
+Furthermore, as a result of parallel maintenance, developers in one of the projects may identify and fix bugs in shared artefacts.
+%\tom{Why would there be any shared artefacts if the split/fork is not a social fork?} 
+\jb{they have shared artefacts since they share a common code base and they are still interconnected through traceability links}
+Developers in each variant of the family are not obligated to contribute back but if they wish, the fixes could be propagated to other members of the family to avoid effort duplication.
+%\tom{Why would there be any incentive to propagate fixes if the variant forks are not social forks?} \jb{bug fixed appearing in shared artefacts could be shared among the families although the developers are not obligated propagate back. For example is the family is owned by the same company. If the developers were notified of the interesting changes that have taken place in the other variants, they would integrate them into their own variants. This helps avoid duplication of efforts.}
 
 There have been many studies on variant forks. However, most of these studies were carried out on \texttt{SourceForge}~\cite{Linus:2012Perspectives,Gregorio:2012,Viseur:2012Forks,Linus:2013CodeForking,Laurent:2008,Linus:2011ToFork}, before the advent of social coding platforms such as \gh.
 We have found only two studies that investigated variant forks on \gh~\cite{businge2018appfamilies,Zhou:2020}.
-While the pre-\gh studies report controversial perceptions around hard forks~\cite{Chua:Forking:2017,Dixion:2009Forks,Ernst:2010,Linus:2011ToFork,Linus:2014Hackers,Raymond:Cathedral:2001},\tom{You introduce the term "hard forks" but this term has not been introduced before...}
-According to Zhou et al.~\cite{Zhou:2020} these perceptions have changed with the advent of \gh. Jiang et al.~\cite{Lo:2017} state that, although forking is controversial in traditional open source software (OSS) communities, it is actually encouraged as a built-in feature in \gh. Jiang et al. ~\cite{Lo:2017} further report that developers fork repositories to submit pull requests, fix bugs, add new features and keep copies (social forks).
+While the pre-\gh studies report controversial perceptions around variant forks~\cite{Chua:Forking:2017,Dixion:2009Forks,Ernst:2010,Linus:2011ToFork,Linus:2014Hackers,Raymond:Cathedral:2001}, Zhou et al.~\cite{Zhou:2020} reports that these perceptions have changed with the advent of \gh. Jiang et al.~\cite{Lo:2017} state that, although forking is controversial in traditional open source software (OSS) communities, it is actually encouraged as a built-in feature in \gh. Jiang et al. ~\cite{Lo:2017} further reports that developers fork repositories to submit pull requests, fix bugs, add new features and keep copies (social forks).
 Zhou et al.~\cite{Zhou:2020} also report that many variant forks actually start as social forks.
 
-While numerous studies have investigated variant forking, we are not aware of any study that has investigated the socio-technical specificities of these variant forks.
-Our research therefore aims at empirically studying the evolution of \textbf{software families} composed of variant project repositories by investigating their socio-technical aspects.
+While numerous studies have investigated variant forking, we are not aware of any study that has investigated the socio-technical specificities of these variant forks that are part of \textbf{software ecosystems}.
+Our research therefore aims at empirically studying the evolution of \textbf{software families} (a subset of software ecosystems), that are composed of variant project repositories by investigating their socio-technical aspects. Specifically, we would like to investigate evolution socio-technical specificities of the software families in the \js ecosystem whose repositories are hosted on \gh.
 For the social aspects, it would be interesting to look at the interaction and collaboration between communities involved in the mainline and variants.
-How different are collaborations with respect to who forked and how the fork has been created?
-For the technical aspects, as an example, considering the dependent packages,\tom{This notion of dependent packages seems to come from nowhere...} it would be interesting to investigate if developers migrate from one variant of the required package to another in a family.
-As a preliminary step, this paper investigates the socio-technical aspects of forking in the \np package distribution platform, the largest collection of \js packages.\tom{It is unclear to me how this focus on \np is linked to \gh repositories, since you do not explicitly mention this anywhere.}
- More specifically, we focus on three research questions:\tom{I count 4 questions, from RQ0 to RQ3}
+For example, finding out how different are collaborations with respect to who forked and how the fork has been created?
+For the technical aspects, ecosystems are often characterised by numerous dependency relationships between their on the packages on software package distribution platforms~\cite{decan:2016:ECSAW}. To this end, we would to investigate if developers migrate from one variant of the required package to another in a family.
+%As a preliminary step, this paper investigates the socio-technical aspects of forking in the \npm, the largest collection of \js packages. 
+
+Before we can proceed in stating the research questions of our study let us first discuss the terminologies we shall use in our analysis: 
+
 \begin{itemize}
-\item[\textbf{RQ0}] \textit{How prevalent are software families in \np?}\tom{It needs to be made clear what is meant by "software families in \np", since before you only talked about software families in social coding platforms, and more specifically in \gh. This link needs to be made really clear.}
-We determine whether the research goal\tom{You should not confuse a research GOAL with a research QUESTION. Typically a research goal is much higher level. According to the goal-question metric (GQM) paradigm, you can derive questions from goals, and then answer these questions by means of metrics.} is worthwhile to pursue: if software families rarely exist, results about their social-technical evolution may not be statistically significant.
+    \item \textbf{Package.} One that is distributed in a package manager (e.g., \np).
+    
+    \item \textbf{Mainline.} A repository that is hosted on \gh 
+    whose package releases are distributed on \npm.
 
-\note{I'm missing the motivation for the three following RQs. If it's mainly exploratory, then we should state it, and explain why these questions are worth to consider (i.e., how the answer helps).}
-\item[\textbf{RQ1}] \textit{How do the distributions of package releases in mainlines and their variants compare to each other? }\tom{It is still not clear to me, from reading the text, what you mean by "package releases in mainlines". How is a package release linked to a mainline repository and to variant (forked) repositories? Perhaps you should provide some concrete example somewhere (probably even before starting the RQs) to make all of this clear to the reader (including the link between packages, package releases, package dependencies, github repositories and their forks.}
-This RQ will help us determine if mainlines and variants are continuously maintained.\tom{Why is it important or relevant to know if they are continuously maintained?}
-Do most variants have one-off releases?\tom{What do you mean by one-off releases? This term is not explained neither introduced anywhere...}
+    \item \textbf{Variant.} A fork repository of the \textbf{mainline} that is hosted on \gh whose package is distributed on \npm.
 
-\item[\textbf{RQ2}] \textit{How do the distributions of package dependencies in mainlines and their variants compare to each other?}
-This RQ will help us determine if members in the software families depend on other packages in the \np ecosystem.\tom{Unclear what is meant by "members in the software families depend on other packages}
+    \item \textbf{Software family.} As set of two or more repositories (the mainline and its variants) that are hosted on \gh with the package releases of both mainline and its variants distributed on \npm.
 
-\item[\textbf{RQ3}] \textit{Do the variant projects have dependent packages\,/\,projects?}
+    %\ad{(for what follows) do we really need mathematical notations, and a true formalisation of these concepts? It seems we are not even using the notations in the RQs. }
+    %\tm{I agree that for a short 4-page paper it is not necessary to have formal definitions. Especially if we do not use them later on.}
+    
+    \item \textbf{Release.} These are one or more releases of a package distributed on \npm.
+    %Let $E$ be a package distribution, i.e., a set of packages. Given a package $p\in E$, releases($p$) denotes the set of releases of $p$. Every release $r\in$ releases ($p$) has a release date $r_{date}$ and a version $r_{version}$.
+
+     \item \textbf{Dependency.} These are the packages that a given release of a package depends on.
+     %A release $r$ has a (potentially empty) set $r_{deps}$ of dependencies. A dependency $d \in r_{deps}$ is defined as a pair($d_{target}$, $d_{constraint}$) composed of a target package $d_{target} \in E$ and a dependency constraint $d_{constraint}$ over the releases in releases ($d_{target}$).
+
+    \item \textbf{Dependent.}  A package $A$ depending on a package $B$ is a ``dependent package of $B$''. By definition, both $A$ and $B$ are distributed in a package distribution platform. A project is a repository in which a package is developed, but not necessarily distributed in a package distribution platform. By extension, a project $A$ depending on a package $B$ is a ``dependent project''. In this case, $B$ is distributed in a package distribution platform, but not necessarily $A$.
+
+\end{itemize}
+
+To put the the presented terminologies in perspective, let us present a concrete example of a software family. The mainline repository \texttt{creationix/wheat} is hosted on \gh (with a total of 136 forks), is a blog engine for coders written in \texttt{node.JS}. The mainline and 2 of 136 forks (\texttt{sun11/wheat} and \texttt{frodare/barley}) have their package releases distributed on \npm. In Table~\ref{tab:example} we present statistics corresponding to the package releases, package dependencies, dependent packages and dependent projects for three repositories in the software family.
+
+%The following are the numbers of package releases, package dependencies, dependents packages and dependents projects for the mainline and its two variants:
+
+
+\begin{table}[ht]
+\begin{center}
+% \small
+\caption{Count of the mainline and variants releases, dependencies, dependent packages and dependent projects. M = mainline and F = fork.}
+\label{tab:example}
+\begin{tabular}{l r r r r } 
+ \hline
+ &releases & dependencies & \shortstack{dependent \\ packages} & \shortstack{dependent \\ projects} \\ \hline
+ creationix/wheat (M)  &13 & 77 & 2&23 \\ 
+ frodare/barley (F)    &1 & 8 & 0 & 0 \\ 
+ sun11/wheat (F)       &1 & 6 & 1 & 1 \\ 
+ \hline
+\end{tabular}
+\end{center}
+\end{table}
+%\tm{A concrete example is at its place here.}
+
+
+As stated earlier in this section, since this research the first of its kind, we would like to state some exploratory questions as a preliminary step of investigates the socio-technical aspects of forking in the \js ecosystem. 
+Below are the four research questions for our study
+\begin{itemize}
+\item[\textbf{$RQ_0$}] \textit{How prevalent are software families in \np?}
+%\tom{It needs to be made clear what is meant by "software families in \np", since before you only talked about software families in social coding platforms, and more specifically in \gh. This link needs to be made really clear.}
+We would like to determine whether software families exist in software ecosystems. If software families rarely exist, results about their social-technical evolution may not be statistically significant.
+%\tm{You should not confuse a research GOAL with a research QUESTION. Typically a research goal is much higher level. According to the goal-question metric (GQM) paradigm, you can derive questions from goals, and then answer these questions by means of metrics.}
+
+\ad{I'm missing the motivation for the three following RQs. If it's mainly exploratory, then we should state it, and explain why these questions are worth to consider (i.e., how the answer helps).}
+\item[\textbf{$RQ_1$}] \textit{How do the distributions of package releases in mainlines and their variants compare to each other? }\tm{It is still not clear to me, from reading the text, what you mean by "package releases in mainlines". How is a package release linked to a mainline repository and to variant (forked) repositories? Perhaps you should provide some concrete example somewhere (probably even before starting the RQs) to make all of this clear to the reader (including the link between packages, package releases, package dependencies, github repositories and their forks.}
+This RQ will help us determine if mainlines and variants are continuously maintained.\tm{Why is it important or relevant to know if they are continuously maintained?}
+Do most variants have one-off releases?\tm{What do you mean by one-off releases? This term is not explained neither introduced anywhere...}
+
+\item[\textbf{$RQ_2$}] \textit{How do the distributions of package dependencies in mainlines and their variants compare to each other?}
+This RQ will help us determine if members in the software families depend on other packages in the \np ecosystem.\tm{Unclear what is meant by "members in the software families depend on other packages}
+
+\item[\textbf{$RQ_3$}] \textit{Do the variant projects have dependent packages\,/\,projects?}
 This Rq will help us determine other packages\,/\,projects in the ecosystem that depend on the variant projects.
 Since they are forks of the mainline, it would be interesting to find some variants that have more dependent packages\,/\,projects.
 \end{itemize}
-\tom{The RQs, their motivation, and the overall research goal in which these questions fit need to be explained much better...}
+\tm{The RQs, their motivation, and the overall research goal in which these questions fit need to be explained much better...}

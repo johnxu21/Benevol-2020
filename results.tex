@@ -5,14 +5,14 @@
    \centering
     \includegraphics[scale=0.4]{figures/variants.pdf}
     \caption{Family size (number of variants in a family).}
-    \tom{Wouldn't it be clearer to put on the y-axis, "number of mainlines" and on the x-axis "number of variants"? I guess this corresponds to the same thing, right?}
+   
     \label{fig:variants}
 \end{figure}
 
 \noindent
 $RQ_0$: \textbf{How prevalent are software families?}
 
-With this first RQ, we aim to determine if software families exist in software ecosystems. In the \js ecosystem we discovered 12,813 variants of the mainline\tom{By saying "the mainline" you seem to suggest there is a single mainline. I guess what you mean to say is that there are in total 10,743 distinct mainlines and 12,813 variants in total, is this correct? If yes, then say so.} and a total of 10,743 software families. Figure~\ref{fig:variants} present a histogram of the distribution of the software families.\tom{"of the number of variants per mainline"} The y-axis (in log-scale) shows the number of families\tom{mainlines?} and  the x-axis shows the number of variants in the families. For example, the first bar tells us that there are 9,280 families\tom{mainlines?} that contain only one variant. We also observe two large families containing 16 and 17 variants. The results of $RQ_0$ reveal that software families indeed exist in software ecosystems.\tom{The last sentence is too generic. It only shows that software families exist in the \np-\gh ecosystem, nothing more.}
+With this first RQ, we aim to determine if software families exist in software ecosystems. In the \js ecosystem we discovered a total 10,743 distinct mainlines and 12,813 variants in total. This means that we have a total of 10,743 software families. Figure~\ref{fig:variants} present a histogram of the distribution of the number of variants per mainline. The y-axis (in log-scale) shows the number of mainlines and  the x-axis shows the number of variants per mainline. For example, the first bar tells us that there are 9,280 mainlines that contain only one variant. We also observe two large mainlines containing 16 and 17 variants. The results of $RQ_0$ reveal that software families indeed exist in the \js ecosystem on \gh.%\tm{The last sentence is too generic. It only shows that software families exist in the \np-\gh ecosystem, nothing more.}
 
 \begin{figure}[htbp]
 \vspace{-.3cm}
@@ -22,9 +22,9 @@ With this first RQ, we aim to determine if software families exist in software e
     \label{fig:releases}
 \end{figure}
 
-\tom{It would be nice to have a summary box at the end of each RQ}
+\tm{It would be nice to have a summary box at the end of each RQ}
 
-$RQ_1$: \textbf{The distribution of package releases for mainlines versus variants.}\tom{Please phrase each RQ as a real question.}
+$RQ_1$: \textbf{How do the distributions of package dependencies in mainlines and their variants compare to each other?}
 
 With this second RQ, we aim to ascertain if the mainlines and the variants are continuously maintained. 
 Figure~\ref{fig:releases} presents a scatter plot showing the distribution of releases for the variants versus the releases for the mainlines. 
@@ -45,9 +45,9 @@ This is interesting since developers variants did not make a one off package dis
     \label{fig:dependencies}
 \end{figure}
 
-\tom{It would be nice to have a summary box at the end of each RQ}
+\tm{It would be nice to have a summary box at the end of each RQ}
 
-$RQ_2$: \textbf{The distribution of package dependencies for the mainlines versus variants.}\tom{Please phrase each RQ as a real question.}
+$RQ_2$: \textit{How do the distributions of package dependencies in mainlines and their variants compare to each other?}
 
 With this RQ, we want to ascertain the frequency of package dependencies on other packages for the mainlines and the variants in the software families. 
 Figure~\ref{fig:dependencies} presents a scatter plot showing the distribution of the package dependencies of the variants versus the dependencies of the mainline.
@@ -77,9 +77,9 @@ Overall, we observe the mainlines having more dependencies compared to their var
     \label{fig:mainline_variants_packages}%
 \end{figure*}
 
-\tom{It would be nice to have a summary box at the end of each RQ}
+\tm{It would be nice to have a summary box at the end of each RQ}
 
-$RQ_3$: \textbf{The distribution of dependent packages and projects of the mainlines and variants.}\tom{Please phrase each RQ as a real question.}
+$RQ_3$: \textbf{The distribution of dependent packages and projects of the mainlines and variants.}\tm{Please phrase each RQ as a real question.}
 
 In this RQ we are interesting in observing if other packages\,/\,projects in the ecosystem depend on the variants.
 In Figure~\ref{fig:packages_and_projects} we present the scatter plots showing the distribution of the dependent packages (Figure~\ref{fig:packages_and_projects}-(a)) and dependent projects (Figure~\ref{fig:packages_and_projects}-(b)) for the variants versus mainlines.
@@ -92,4 +92,4 @@ We observe the same trend for the dependent projects in Figure~\ref{fig:packages
 In both Figure~\ref{fig:packages_and_projects}-(a) and Figure~\ref{fig:packages_and_projects}-(b), we observe that most variants have $<10$ dependent packages\,/\,projects. 
 This is still interesting since it implies that some developers do depend on the variants as opposed to their mainlines counterparts offering similar functionality.
 
-\tom{It would be nice to have a summary box at the end of each RQ}
+\tm{It would be nice to have a summary box at the end of each RQ}

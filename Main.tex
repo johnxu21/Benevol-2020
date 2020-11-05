@@ -22,6 +22,8 @@
 \usepackage{relsize,xspace}
 \usepackage{cite}
 \usepackage{textcomp}
+\usepackage{mdframed}
+\usepackage{framed}
 
 %use the following command to DISABLE all to do notes and comments
 %\usepackage[disable]{todonotes}
@@ -112,9 +114,10 @@
 \maketitle
 
 \begin{abstract}
+Software developers often need to create variants to account for different customer segments. These variants have common code base but also comprise of variant specific code. A common strategy is to clone (or fork) an existing app and then adapt it to the new requirements. This form of reuse has been enhanced with the advent of social-coding platforms, such as \gh and package distribution platforms like \np: \gh offer facilities for forking, pull requests, and cross-project traceability. \np offers facilities of managing package release dependencies and dependents on the distribution platform. Little is known about the maintenance practices of the variants.
+In this study we perform an exploratory investigation on the variant's technical aspects, by mining repositories present on \js ecosystem, whose sources are hosted on \gh, having their package releases on \npm. We have identified a significant number of variants from the \js ecosystem. We have also observed that, compared to their mainline counterparts, we find that variants do have a significant number of package releases, package dependencies, dependent packages and dependent projects.
 
-\tm{Abstract appears to be missing still.}
-
+%Social coding platforms like \gh and package distribution platforms like \np have substantially improved both code reuse and collaborative development. The two have provided a huge bazaar of software projects and components that can be reused through forking and package dependencies, respectively. \gh comprises a number of software ecosystems that form
 \end{abstract}
 
 \begin{IEEEkeywords}

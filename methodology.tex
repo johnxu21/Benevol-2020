@@ -8,13 +8,14 @@ According to the 2020 Stack Overflow Developer Survey\footnote{https://insights.
 
 
 
-\textbf{Dataset}. Our dataset of the \gh repositories from the \js ecosystem and their corresponding and \np packages dependents and dependencies were extracted from the \texttt{libraries.io} release 1.6.0 of January 12, 2020. We use the following heuristics to extract the mainline--variant pairs of the software families in the \js ecosystem on \gh: the repository $A$ is a variant of the repository $B$ if (1) the package releases of $A$ and $B$ are distributed on \npm 
+%\textbf{Dataset}.
+ Our dataset of \gh repositories from the \js ecosystem and their corresponding \np packages, dependents and dependencies were extracted from the \texttt{libraries.io} release 1.6.0 of January 12, 2020. We use the following heuristics to extract the mainline--variant pairs of the software families in the \js ecosystem on \gh: the repository $A$ is a variant of the repository $B$ if (1) the package releases of $A$ and $B$ are distributed on \npm 
 %\tom{"repositories" are not distributed on npm, only package releases are. Moreover, there is not necessarily a one-to-one mapping between repositories and package releases} 
-and (2) $A$ is a fork--of $B$ on \gh.
+and (2) $A$ is a fork of $B$ on \gh.
 %\tom{On \gh?} 
 Since we focus on the \js ecosystem on \gh, we extracted software families whose repositories are hosted on \gh and their packages distributed on \npm.
 %\tm{This sentence comes much too late and is not sufficiently detailed.} 
-For each \textbf{mainline} and its corresponding \textbf{variants} we collected their \textbf{releases}, \textbf{dependencies} and \textbf{dependents} (projects and packages).
+For each mainline and its corresponding variants we collected their releases, dependencies and dependents (projects and packages).
 
 
 

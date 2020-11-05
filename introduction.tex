@@ -42,24 +42,24 @@ While the pre-\gh studies report controversial perceptions around variant forks~
 Zhou et al.~\cite{Zhou:2020} also report that many variant forks actually start as social forks.
 
 While numerous studies have investigated variant forking, we are not aware of any study that has investigated the socio-technical specificities of these variant forks that are part of \textbf{software ecosystems}.
-Our research therefore aims at empirically investigating the socio-technical evolution of \textbf{software families} within these software ecosystems, that are composed of variant project repositories. Specifically, we aim to investigate the evolution of socio-technical specificities of software families in \npm \js packages whose repositories are hosted on \gh.
+Our research therefore aims at empirically investigating the socio-technical evolution of \textbf{software families} within these software ecosystems, that are composed of variant project repositories. Specifically, we aim to investigate the evolution of socio-technical specificities of software families in \npm for \js packages whose repositories are hosted on \gh.
 For the social aspects, it is interesting to study the interaction and collaboration between communities involved in the mainline and variants.
 For example, finding out how different are collaborations with respect to who forked and how the fork has been created?
 For the technical aspects, ecosystems are often characterised by numerous dependencies between software packages released on package distribution platforms~\cite{decan:2016:ECSAW}. 
 As a result of parallel development of the mainline and its variants, while offering similar functionality, we aim to investigate if their dependent projects migrate from one variant of the required package to another in a family.\tm{Unclear what is meant by "their dependent projects"}
 %As a preliminary step, this paper investigates the socio-technical aspects of forking in the \npm, the largest collection of \js packages. 
 
-Before state our research goal and research questions, let us first discuss the terminology we will use in our analysis and also provide a concrete example: 
+Before stating our research goal and research questions, let us first discuss the terminology we will use in our analysis and also provide a concrete example: 
 
 \begin{itemize}
-    \item \textbf{Package.} A reusable software component that is distributed through a package manager (e.g., \np).
+    \item \textbf{Package.} A reusable software component that is distributed through the \np package manager.
     
     \item \textbf{Mainline.} A repository that is hosted on \gh 
     whose package releases are distributed on \npm.
 
     \item \textbf{Variant.} A fork repository of the mainline that is hosted on \gh whose package is distributed on \npm.
 
-    \item \textbf{Software family.} As set of two or more repositories (the mainline and its variants) that are hosted on \gh with the package releases of both mainline and its variants distributed on \npm.
+    \item \textbf{Software family.} A set of two or more repositories (the mainline and its variants) that are hosted on \gh with the package releases of both mainline and its variants distributed on \npm.
 
     %\ad{(for what follows) do we really need mathematical notations, and a true formalisation of these concepts? It seems we are not even using the notations in the RQs. }
     %\tm{I agree that for a short 4-page paper it is not necessary to have formal definitions. Especially if we do not use them later on.}
@@ -67,14 +67,12 @@ Before state our research goal and research questions, let us first discuss the 
     \item \textbf{Release.} A specific package version that is publicly distributed on \npm.
     %Let $E$ be a package distribution, i.e., a set of packages. Given a package $p\in E$, releases($p$) denotes the set of releases of $p$. Every release $r\in$ releases ($p$) has a release date $r_{date}$ and a version $r_{version}$.
 
-     \item \textbf{Dependency.} A package that a given release of a package depends on.
+     \item \textbf{Dependency.} A package that is required for the proper functioning of an other package.
      %A release $r$ has a (potentially empty) set $r_{deps}$ of dependencies. A dependency $d \in r_{deps}$ is defined as a pair($d_{target}$, $d_{constraint}$) composed of a target package $d_{target} \in E$ and a dependency constraint $d_{constraint}$ over the releases in releases ($d_{target}$).
 
     \item \textbf{Dependent package.}  A package $A$ depending on a package $B$ is a ``dependent package of $B$''. By definition, both $A$ and $B$ are distributed in a package distribution platform. %\sd{I think you need to split up the definition and talk about the ``dependent package'' and a ```dependent project''. Otherwise the columns in  Table~\ref{tab:example} don't match.} 
     
-      \item \textbf{Dependent project.} A project is a repository in which a package is developed, but not necessarily distributed in a package distribution platform. By extension, a project $A$ depending on a package $B$ is a ``dependent project''. In this case, $B$ is distributed in a package distribution platform, but not necessarily $A$.
-    
-   
+      \item \textbf{Dependent project.} A project is a repository in which a package is developed, but not necessarily distributed in a package distribution platform. By extension, a project $A$ depending on a package $B$ is a ``dependent project''. In this case, $B$ is distributed in \npm, but not necessarily $A$.
 
 \end{itemize}
 
@@ -107,7 +105,7 @@ Below we state the four research questions for our study.
 \begin{itemize}
 \item[\textbf{$RQ_0$}] \textit{How prevalent are software families in the \js ecosystem on \gh?}
 %\tom{It needs to be made clear what is meant by "software families in \np", since before you only talked about software families in social coding platforms, and more specifically in \gh. This link needs to be made really clear.}
-We would like to determine whether software families exist in software ecosystems. If software families rarely exist, results about their social-technical evolution may not be statistically significant.
+We would like to determine whether software families exist in software ecosystems. If software families rarely exist, results about their socio-technical evolution may not be statistically significant.
 %\tm{You should not confuse a research GOAL with a research QUESTION. Typically a research goal is much higher level. According to the goal-question metric (GQM) paradigm, you can derive questions from goals, and then answer these questions by means of metrics.}
 %\ad{I'm missing the motivation for the three following RQs. If it's mainly exploratory, then we should state it, and explain why these questions are worth to consider (i.e., how the answer helps).}
 \item[\textbf{$RQ_1$}] \textit{How do the distributions of package releases in mainlines and their variants compare to each other?}
@@ -128,7 +126,7 @@ This RQ will help us determine if the mainlines and their variants depend on oth
 
 \item[\textbf{$RQ_3$}] \textit{Do variant packages exhibit other dependent packages\,/\,projects than the Mainline?}
 This RQ will help us determine variations in dependencies within product families.
-If a variant has other dependents than the mainline it may be an indication of which features are demanded in the ecosystem.
+If a variant has other dependents than the mainline, it may be an indication of which features are demanded in the ecosystem.
 
 
 %variants that have more dependent packages\,/\,projects. Having dependent packages\,/\,projects means that other users are interested in them.

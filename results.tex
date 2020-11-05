@@ -12,7 +12,7 @@
 \noindent
 $RQ_0$: \textbf{How prevalent are software families in the \js ecosystem on \gh?}
 
-With this first RQ, we aim to determine if software families exist in software ecosystems. In the \js ecosystem we discovered a total 10,743 distinct mainlines and 12,813 variants in total. This means that we have a total of 10,743 software families. Figure~\ref{fig:variants} present a histogram of the distribution of the number of variants per mainline. The y-axis (in log-scale) shows the number of mainlines and  the x-axis shows the number of variants per mainline. For example, the first bar tells us that there are 9,280 mainlines that contain only one variant. We also observe two mainlines containing us much as 16 and 17 variants. The results of $RQ_0$ reveal that software families indeed exist in the considered ecosystem.%\tm{The last sentence is too generic. It only shows that software families exist in the \np-\gh ecosystem, nothing more.}
+With this first RQ, we aim to determine if software families exist in software ecosystems. In the \js ecosystem we discovered a total 10,743 distinct mainlines and 12,813 variants in total. This means that we have a total of 10,743 software families. Figure~\ref{fig:variants} presents a histogram of the distribution of the number of variants per mainline. The y-axis (in log-scale) shows the number of mainlines and  the x-axis shows the number of variants per mainline. For example, the first bar tells us that there are 9,280 mainlines that have only one variant. We also observe two mainlines having 16 and 17 variants. The results of $RQ_0$ reveal that software families indeed exist in the considered ecosystem.%\tm{The last sentence is too generic. It only shows that software families exist in the \np-\gh ecosystem, nothing more.}
 
 \begin{framed}
 \noindent
@@ -42,7 +42,7 @@ The data points on the bottom right tell us that there are a number of mainlines
 Overall, we observe more mainlines being maintained compared to their variant counterparts.
 However, we also observe a significant amount of variants being maintained. 
 This is interesting since developers variants did not make a one off package distribution; they are continuously distributing new releases of their package. 
-\tm{I have difficulties to interpret the figure and what we can actually observe from it. Not much if you ask me.}
+\tm{I have difficulties to interpret the figure and what we can actually observe from it. Not much if you ask me.}\az{It seems that there is no correlation between the number of releases for variants and mainlines. This may suggest that: If the mainline keeps releasing new versions then the variant will release less often. But if the mainline stopped (frequently) releasing new versions then more releases will come from the variant.}
 
 \begin{framed}
 \noindent
@@ -57,19 +57,20 @@ This is interesting since developers variants did not make a one off package dis
     \caption{The distribution of the mainline versus variant package dependencies.}
     \label{fig:dependencies}
 \end{figure}
+\az{If we need space, we can reduce the size of the figures}
 
 %\tm{It would be nice to have a summary box at the end of each RQ}
 
 $RQ_2$: \textbf{How do the distributions of package dependencies in mainlines and their variants compare to each other?}
 
 This RQ studies the frequency of package dependencies on other packages for the mainlines and the variants in the software families. 
-Figure~\ref{fig:dependencies} presents a scatter plot showing the distribution of the package dependencies of the variants versus the dependencies of the mainline.
+Figure~\ref{fig:dependencies} presents a scatter plot showing the distribution of the package dependencies of the variant versus the dependencies of the mainline.
 The x-axis shows the number of dependencies of the mainline and
 the y-axis shows the number of dependencies of the variant.
 The color of the data points represents the number cases for the mainlines\,/\,variants.
 For example, on the top right of the graph we see a few scattered points single case variants telling us that there are a few variants that have many dependencies compared to the mainline counterparts.\tm{Same comments above as for previous RQ}
 We also see many scattered single case mainlines having many dependencies compared to their variant counterparts. 
-Overall, we observe the mainlines having more dependencies compared to their variant counterparts.
+Overall, we observe the mainlines having more dependencies compared to their variant counterparts.\az{I see some kind of correlation which was not the case in Figure~\ref{fig:releases}. This may mean that variants do not change a lot of their dependencies inherited from the mainline.}
 
 \begin{framed} 
 \noindent

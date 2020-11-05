@@ -1,3 +1,5 @@
+\sd{Can I be added as a co-author?}
+
 \section{Introduction}
 Today, developing quality software faster developers rely on code reuse and distributed collaborative development tools. Social coding platforms like \gh have substantially improved  both code reuse and collaborative development, providing a huge bazaar of software projects and components that can be reused through explicit project dependencies or forking of software repositories. This is supported by various automated facilities such as pull requests, dependency management tools, issue tracking systems (e.g. \textsf{JIRA}), source code review tools (e.g., \textsf{Gerrit}), Q\&A services (e.g. \textsf{StackOverflow}), continuous integration tools (e.g., \textsf{Travis CI}), and package distribution managers (e.g., \np). Social coding platforms comprise a number of social software ecosystems i.e., large collections of interdependent software components that are maintained by large and geographically distributed communities of collaborating contributors~\cite{lungu:2008,decan:2017}.
 The ecosystems form large socio-technical networks of technical and social components that interact with each other on top of common software and hardware platforms.
@@ -70,7 +72,7 @@ Before we can proceed to state our goal and research questions of this study let
      \item \textbf{Dependency.} These are the packages that a given release of a package depends on.
      %A release $r$ has a (potentially empty) set $r_{deps}$ of dependencies. A dependency $d \in r_{deps}$ is defined as a pair($d_{target}$, $d_{constraint}$) composed of a target package $d_{target} \in E$ and a dependency constraint $d_{constraint}$ over the releases in releases ($d_{target}$).
 
-    \item \textbf{Dependent.}  A package $A$ depending on a package $B$ is a ``dependent package of $B$''. By definition, both $A$ and $B$ are distributed in a package distribution platform. A project is a repository in which a package is developed, but not necessarily distributed in a package distribution platform. By extension, a project $A$ depending on a package $B$ is a ``dependent project''. In this case, $B$ is distributed in a package distribution platform, but not necessarily $A$.
+    \item \textbf{Dependent.}  A package $A$ depending on a package $B$ is a ``dependent package of $B$''. By definition, both $A$ and $B$ are distributed in a package distribution platform. \sd{I think you need to split up the definition and talk about the ``dependent package'' and a ```dependent project''. Otherwise the columns in  Table~\ref{tab:example} don't match.} A project is a repository in which a package is developed, but not necessarily distributed in a package distribution platform. By extension, a project $A$ depending on a package $B$ is a ``dependent project''. In this case, $B$ is distributed in a package distribution platform, but not necessarily $A$.
 
 \end{itemize}
 
@@ -119,6 +121,13 @@ This RQ will help us determine if the mainlines and their variants in depend on 
 \item[\textbf{$RQ_3$}] \textit{Do the variant packages have dependent packages\,/\,projects?}
 This RQ will help us determine other packages\,/\,projects in the ecosystem that depend on the variant projects.
 Since they are forks of the mainline, it would be interesting to find other packages are interested depending on variants as opposed to their mainline counterparts offering similar functionality.
+
+\sd{I would rephrase RQ3 as follows.}
+
+\item[\textbf{$RQ_3$}] \textit{Do variant packages exhibit other dependent packages\,/\,projects than the Mainline?}
+This RQ will help us determine variations in dependencies within product families.
+If a variant has other dependents than the mainline it may be an indication of which features are demanded in the eco-system.
+
 
 %variants that have more dependent packages\,/\,projects. Having dependent packages\,/\,projects means that other users are interested in them.
 \end{itemize}

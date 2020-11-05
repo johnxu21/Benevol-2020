@@ -74,6 +74,7 @@ Overall, we observe the mainlines having more dependencies compared to their var
 \end{framed}
 
 \begin{figure*}[htbp]%
+\vspace{-.3cm}
     \centering
     \subfloat[Packages]{{\includegraphics[width=8cm]{figures/dependents} }}%
     \qquad
@@ -82,8 +83,9 @@ Overall, we observe the mainlines having more dependencies compared to their var
     \label{fig:packages_and_projects}%
 \end{figure*}
 
-
+\begin{comment}
 \begin{figure*}[htbp]%
+\vspace{-.3cm}
     \centering
     \subfloat[ Mainlines]{{\includegraphics[width=8cm]{figures/benevolj_dependents_mainline.pdf} }}%
     \qquad
@@ -91,7 +93,7 @@ Overall, we observe the mainlines having more dependencies compared to their var
     \caption{Distribution of dependent packages versus dependent projects for mainlines and variants.}%
     \label{fig:mainline_variants_packages}%
 \end{figure*}
-
+\end{comment}
 %\tm{It would be nice to have a summary box at the end of each RQ}
 
 $RQ_3$: \textbf{Do the variant projects have dependent packages\,/\,projects?}
@@ -105,8 +107,8 @@ Looking at Figure~\ref{fig:packages_and_projects}-(a), we observe that most of t
 This implies that there are very many mainline variants having many dependent packages compared to their variant counterparts.
 We observe the same trend for the dependent projects in Figure~\ref{fig:packages_and_projects}-(b).
 In both Figure~\ref{fig:packages_and_projects}-(a) and Figure~\ref{fig:packages_and_projects}-(b), we observe that most variants have $<10$ dependent packages\,/\,projects. 
-This is still interesting since it implies that some developers do depend on the variants as opposed to their mainlines counterparts offering similar functionality. In Figure~\ref{fig:mainline_variants_packages}-(a) we present a scatter plot showing the distribution of dependent projects of mainline vs the dependent packages of the mainline, while in Figure~\ref{fig:mainline_variants_packages}-(b) we show the same for variants. In both Figure~\ref{fig:mainline_variants_packages}-(a) and~\ref{fig:mainline_variants_packages}-(b) the y-axes represent the number of dependent projects for the mainlines\,/\,variants and the x-axes represent the number of dependent packages for the mainlines\,/\,variants, respectively. 
-The color of the data points in the graphs represent the number cases for the mainlines\,/\,variants, respectively. We observe that the graph for the mainlines have more concentration of data points all over the graph compared the variants. this implies that the mainlines have more dependent packages/projects compared to the variants. However, irrespective of lower number of dependent packages/projects on the variants, it is still interesting to see some variants hanging dependents.
+This is still interesting since it implies that some developers do depend on the variants as opposed to their mainlines counterparts offering similar functionality. 
+%In Figure~\ref{fig:mainline_variants_packages}-(a) we present a scatter plot showing the distribution of dependent projects of mainline vs the dependent packages of the mainline, while in Figure~\ref{fig:mainline_variants_packages}-(b) we show the same for variants. In both Figure~\ref{fig:mainline_variants_packages}-(a) and~\ref{fig:mainline_variants_packages}-(b) the y-axes represent the number of dependent projects for the mainlines\,/\,variants and the x-axes represent the number of dependent packages for the mainlines\,/\,variants, respectively. The color of the data points in the graphs represent the number cases for the mainlines\,/\,variants, respectively. We observe that the graph for the mainlines have more concentration of data points all over the graph compared the variants. this implies that the mainlines have more dependent packages/projects compared to the variants. However, irrespective of lower number of dependent packages/projects on the variants, it is still interesting to see some variants hanging dependents.
 
 \begin{framed}
 \noindent

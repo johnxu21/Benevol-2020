@@ -64,7 +64,7 @@ Before stating our research goal and research questions, let us first discuss th
     %\ad{(for what follows) do we really need mathematical notations, and a true formalisation of these concepts? It seems we are not even using the notations in the RQs. }
     %\tm{I agree that for a short 4-page paper it is not necessary to have formal definitions. Especially if we do not use them later on.}
     
-    \item \textbf{Release.} A specific package version that is publicly distributed on \npm.
+    \item \textbf{Release.} A specific package version that is publicly distributed on \np.
     %Let $E$ be a package distribution, i.e., a set of packages. Given a package $p\in E$, releases($p$) denotes the set of releases of $p$. Every release $r\in$ releases ($p$) has a release date $r_{date}$ and a version $r_{version}$.
 
      \item \textbf{Dependency.} A package that is required for the proper functioning of an other package.
@@ -72,14 +72,14 @@ Before stating our research goal and research questions, let us first discuss th
 
     \item \textbf{Dependent package.}  A package $A$ depending on a package $B$ is a ``dependent package of $B$''. By definition, both $A$ and $B$ are distributed in a package distribution platform. %\sd{I think you need to split up the definition and talk about the ``dependent package'' and a ```dependent project''. Otherwise the columns in  Table~\ref{tab:example} don't match.} 
     
-      \item \textbf{Dependent project.} A project is a repository in which a package is developed, but not necessarily distributed in a package distribution platform. By extension, a project $A$ depending on a package $B$ is a ``dependent project''. In this case, $B$ is distributed in \npm.%, but not necessarily $A$.\az{I guess we should remove "necessarily", unless we are counting dependent packages and their dependent projects.}
+      \item \textbf{Dependent project.} A project is a repository in which a package is developed, but not necessarily distributed in a package distribution platform. By extension, a project $A$ depending on a package $B$ is a ``dependent project''. In this case, $B$ is distributed in \np.%, but not necessarily $A$.\az{I guess we should remove "necessarily", unless we are counting dependent packages and their dependent projects.}
 
 \end{itemize}
 
 To put the terminologies in perspective, let us present a concrete example of a software family. 
 The mainline repository \texttt{creationix/wheat} is hosted on \gh (with a total of 136 forks and six contributors as of November 02, 2020). 
 It is a blog engine for coders written in \texttt{node.JS}. 
-The mainline and 2 of the 136 forks (\texttt{sun11/wheat} and \texttt{frodare/barley}) have their package releases on npm.
+The mainline and 2 of the 136 forks (\texttt{sun11/wheat} and \texttt{frodare/barley}) have their package releases on \np.
 %\tm{I do not know why your command npm is "the npm package distribution platform". It is redundant and taking up a lot of text and space unnecessarily.}
 Table~\ref{tab:example} presents statistics corresponding to the package releases, package dependencies, dependent packages and dependent projects for three repositories in the software family.
 %For example, the mainline repository has 13 package releases, 77 package dependencies, 2 dependent packages and 23 dependent projects.\tm{The previous sentence is not necessary since it is shown in the table already.}

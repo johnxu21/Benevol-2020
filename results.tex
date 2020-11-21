@@ -25,30 +25,32 @@ With this first RQ, we aim to determine if software families exist in software e
     \includegraphics[scale=0.5]{figures/benevolj_releases.pdf}
     \caption{Distribution of the mainline versus variant package releases.}
     \label{fig:releases}
-    \tm{Wouldn't some kind of heatmap be more appropriate? Just asking.}
+    %\tm{Wouldn't some kind of heatmap be more appropriate? Just asking.}
 \end{figure}
 
 %\tm{It would be nice to have a summary box at the end of each RQ}
 
 $RQ_1$: \textbf{How do the distributions of package dependencies in mainlines and their variants compare to each other?}
 
-This RQ aims to ascertain if the mainlines and the variants are continuously maintained. 
-Figure~\ref{fig:releases} presents a scatter plot showing the distribution of releases for the variants versus the releases for the mainlines. 
+%This RQ aims to ascertain if the mainlines and the variants are continuously maintained. 
+Figure~\ref{fig:releases} presents a scatter plot of releases for the variants versus the releases for the mainlines. 
 The x-axis shows the number of releases for the mainlines and the y-axis shows the number of releases for the variants. 
-The color of the data points represents the number of cases for the mainlines\,/\,variants.\tm{Unclear what you mean by number of cases}
-For example, the data points on the top left of the graph tell us that there are some variants that have more releases compared to their mainline counterparts. \tm{This has nothing to do with the "color", hence i do not understand the "for example".}
-This implies that those specific variants are being maintained more than their mainline counterparts.
-The data points on the bottom right tell us that there are a number of mainlines having many releases compared to their variant counterparts. 
+The color of the data points represents the number of mainline--variant pairs. For example, darkest circle around the point (1,1) tells us that there are over 600 mainline--variant pairs that have one release each in the data point. The lightest circles tell there is only one mainline--variant pair in the data point. For example the point (100, 1) tells us that there is one mainline--fork pair where the mainline has 100 releases and the variant has only one release.
+%\tm{Unclear what you mean by number of cases}
+%For example, the data points on the top left of the graph tell us that there are some variants that have more releases compared to their mainline counterparts. \tm{This has nothing to do with the "color", hence i do not understand the "for example".}
+The data points along the y-axis tell us that there are some mainline--variant pairs where the variants have more releases compared to the mainline. 
+This implies that these specific variants are being maintained more than their mainline counterparts.
+%The data points on the bottom right tell us that there are a number of mainlines having many releases compared to their variant counterparts. 
 Overall, we observe more mainlines being maintained compared to their variant counterparts.
 However, we also observe a significant amount of variants being maintained. 
 This is interesting since developers variants did not make a one off package distribution; they are continuously distributing new releases of their package. 
-\tm{I have difficulties to interpret the figure and what we can actually observe from it. Not much if you ask me.}\az{It seems that there is no correlation between the number of releases for variants and mainlines. This may suggest that: If the mainline keeps releasing new versions then the variant will release less often. But if the mainline stopped (frequently) releasing new versions then more releases will come from the variant.}
+%\tm{I have difficulties to interpret the figure and what we can actually observe from it. Not much if you ask me.}\az{It seems that there is no correlation between the number of releases for variants and mainlines. This may suggest that: If the mainline keeps releasing new versions then the variant will release less often. But if the mainline stopped (frequently) releasing new versions then more releases will come from the variant.}
 
 \begin{framed}
 \noindent
-\emph{While many mainlines are being maintained more that their variant counterparts (which is not surprising), we  observe a significant number of variants being maintained in parallel. Interestingly we also observed a significant number of variants that are more actively maintained than their mainline counterparts.}
+\emph{While many mainlines are being maintained more that their variant counterparts (which is not surprising), we observe a good number of variants being maintained in parallel. Interestingly we also observed a good number of variants that are more actively maintained than their mainline counterparts.}
 \end{framed}
-\tm{Do not use the term "significant" since you have not shown any statistical significance, you did not even conduct any statisitcal test...}
+%\tm{Do not use the term "significant" since you have not shown any statistical significance, you did not even conduct any statisitcal test...}
 
 \begin{figure}[htbp]
 \vspace{-.3cm}
@@ -57,62 +59,64 @@ This is interesting since developers variants did not make a one off package dis
     \caption{The distribution of the mainline versus variant package dependencies.}
     \label{fig:dependencies}
 \end{figure}
-\az{If we need space, we can reduce the size of the figures}
+%\az{If we need space, we can reduce the size of the figures}
 
 %\tm{It would be nice to have a summary box at the end of each RQ}
 
 $RQ_2$: \textbf{How do the distributions of package dependencies in mainlines and their variants compare to each other?}
 
-This RQ studies the frequency of package dependencies on other packages for the mainlines and the variants in the software families. 
-Figure~\ref{fig:dependencies} presents a scatter plot showing the distribution of the package dependencies of the variant versus the dependencies of the mainline.
+%This RQ studies the frequency of package dependencies on other packages for the mainlines and the variants in the software families. 
+Figure~\ref{fig:dependencies} presents a scatter plot showing the the package dependencies of the variant versus the dependencies of the mainline.
 The x-axis shows the number of dependencies of the mainline and
 the y-axis shows the number of dependencies of the variant.
-The color of the data points represents the number cases for the mainlines\,/\,variants.
-For example, on the top right of the graph we see a few scattered points single case variants telling us that there are a few variants that have many dependencies compared to the mainline counterparts.\tm{Same comments above as for previous RQ}
-We also see many scattered single case mainlines having many dependencies compared to their variant counterparts. 
-Overall, we observe the mainlines having more dependencies compared to their variant counterparts.\az{I see some kind of correlation which was not the case in Figure~\ref{fig:releases}. This may mean that variants do not change a lot of their dependencies inherited from the mainline.}
+The color of the data points represents the number mainline--variant pairs on the data point.
+For example, the darker data points indicate more mainline--variant pairs in the same data point and the lighter data points indicate fewer mainline--variant pairs in the data point. 
+We observe some kind of correlation between the dependencies of the mainlines and variants. 
+This means the more dependencies mainlines are associated with more dependencies of the variants. This could imply that the fork variant inherits the original dependencies of the mainline.
+
+%on the top right of the graph we see a few scattered points single case variants telling us that there are a few variants that have many dependencies compared to the mainline counterparts.\tm{Same comments above as for previous RQ}
+%We also see many scattered single case mainlines having many dependencies compared to their variant counterparts. 
+%Overall, we observe the mainlines having more dependencies compared to their variant counterparts.
+%\az{I see some kind of correlation which was not the case in Figure~\ref{fig:releases}. This may mean that variants do not change a lot of their dependencies inherited from the mainline.}
 
 \begin{framed} 
 \noindent
-\emph{Although the mainlines have more dependencies on other packages compared to their variant counterparts, we observe a significant number of variants that have dependencies.}
+\emph{We observe a correlation between the number of mainline and variant dependencies. This could imply that the variant continues using the packages inherited from the mainline.}
 \end{framed}
-\tm{Do not use the term "significant" since you have not shown any statistical significance, you did not even conduct any statisitcal test...}
+%\tm{Do not use the term "significant" since you have not shown any statistical significance, you did not even conduct any statisitcal test...}
 
-\begin{figure*}[htbp]%
+\begin{figure}[htbp]
 \vspace{-.3cm}
-    \centering
-    \subfloat[Packages]{{\includegraphics[width=6cm]{figures/dependents} }}%
-    \qquad
-    \subfloat[Projects]{{\includegraphics[width=6cm]{figures/benevolj_projects} }}%
-    \caption{Distribution of dependent packages and dependent projects for the mainline versus variants.}%
-    \label{fig:packages_and_projects}%
-\end{figure*}
+   \centering
+    \includegraphics[scale=0.5]{figures/dependents.pdf}
+    \caption{The distribution of the dependent packages for mainline versus variant .}
+    \label{fig:depsPackages}
+\end{figure}
 
-\begin{comment}
-\begin{figure*}[htbp]%
+\begin{figure}[htbp]
 \vspace{-.3cm}
-    \centering
-    \subfloat[ Mainlines]{{\includegraphics[width=8cm]{figures/benevolj_dependents_mainline.pdf} }}%
-    \qquad
-    \subfloat[ Variants]{{\includegraphics[width=8cm]{figures/benevolj_dependents_variant.pdf} }}%
-    \caption{Distribution of dependent packages versus dependent projects for mainlines and variants.}%
-    \label{fig:mainline_variants_packages}%
-\end{figure*}
-\end{comment}
+   \centering
+    \includegraphics[scale=0.5]{figures/benevolj_projects.pdf}
+    \caption{The distribution of the dependent projects for the mainline versus variant.}
+    \label{fig:depsProjects}
+\end{figure}
+
 %\tm{It would be nice to have a summary box at the end of each RQ}
 
 $RQ_3$: \textbf{Do the variant projects have dependent packages\,/\,projects?}
 
-This RQ studies if other packages\,/\,projects in the ecosystem depend on the variants.
-Figure~\ref{fig:packages_and_projects}~(a) presents a scatter plot showing the distribution of the dependent packages and Figure~\ref{fig:packages_and_projects}~(b) shows a scatter plot of dependent projects for the variants versus mainlines.
-The x-axes represent the number of dependent packages for the mainline and number of dependent projects for the variants, respectively.
-The y-axes represent the number of dependent packages for the variants and number of dependent projects for the variants, respectively.
-The color of the data points represents the number cases for the mainlines\,/\,variants.
-Looking at Figure~\ref{fig:packages_and_projects}~(a), we observe that most of the data points are concentrated on the x-axis. 
-This implies that most mainline variants have many dependent packages compared to their fork variants.
-We observe the same trend for the dependent projects in Figure~\ref{fig:packages_and_projects}~(b).
-In both Figure~\ref{fig:packages_and_projects}~(a) and Figure~\ref{fig:packages_and_projects}~(b), we observe that most variants have $<10$ dependent packages\,/\,projects. 
-This is still interesting since it implies that some developers do depend on the variants as opposed to their mainlines counterparts offering similar functionality. 
+%This RQ studies if other packages\,/\,projects in the ecosystem depend on the variants.
+Figure~\ref{fig:depsPackages} and~\ref{fig:depsProjects} present a scatter plots for mainlines versus variants for the dependent packages and dependent projects, respectively.
+The x-axes represent the number of dependent packages\,/\,projects for the mainlines and the y-axes represent the number of dependent packages\,/\,projects for the variants.
+The color of the data points represents the number of mainline--variant pairs at a data point.
+For example, in Figure~\ref{fig:depsPackages} the darker colors indicate that we have more mainline--fork pairs on one data point, while the lighter data points indicate the reverse.
+
+Looking at both Figure~\ref{fig:depsPackages} and~\ref{fig:depsProjects}, we observe that most of the data points are concentrated on the x-axis. 
+This implies that most mainline have many dependent packages/projects compared to their variants counterparts.
+However, we observe a few scattered data points a long the y-axes indicating a few variants which have many dependent packages/projects compared to their mainline counterparts. 
+%We observe the same trend for the dependent projects in Figure~\ref{fig:packages_and_projects}~(b).
+%In both Figure~\ref{fig:packages_and_projects}~(a) and Figure~\ref{fig:packages_and_projects}~(b), we observe that most variants have $<10$ dependent packages\,/\,projects. 
+%This is still interesting since it implies that some developers do depend on the variants as opposed to their mainlines counterparts offering similar functionality. 
 %In Figure~\ref{fig:mainline_variants_packages}-(a) we present a scatter plot showing the distribution of dependent projects of mainline vs the dependent packages of the mainline, while in Figure~\ref{fig:mainline_variants_packages}-(b) we show the same for variants. In both Figure~\ref{fig:mainline_variants_packages}-(a) and~\ref{fig:mainline_variants_packages}-(b) the y-axes represent the number of dependent projects for the mainlines\,/\,variants and the x-axes represent the number of dependent packages for the mainlines\,/\,variants, respectively. The color of the data points in the graphs represent the number cases for the mainlines\,/\,variants, respectively. We observe that the graph for the mainlines have more concentration of data points all over the graph compared the variants. this implies that the mainlines have more dependent packages/projects compared to the variants. However, irrespective of lower number of dependent packages/projects on the variants, it is still interesting to see some variants hanging dependents.
 
 \begin{framed}

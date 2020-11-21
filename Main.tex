@@ -15,26 +15,13 @@
 \usepackage{adjustbox}
 \usepackage{multirow}
 \usepackage{comment}
-% \usepackage{subfigure}
-% \usepackage{subfig}
 \usepackage{threeparttable}
-%\usepackage{siunitx}
 \usepackage{microtype}
 \usepackage{relsize,xspace}
 \usepackage{cite}
 \usepackage{textcomp}
 \usepackage{mdframed}
 \usepackage{framed}
-
-%use the following command to DISABLE all to do notes and comments
-%\usepackage[disable]{todonotes}
-%use the following command to ENABLE all to do notes and comments
-% \usepackage[]{todonotes}
-
-% \newcommand{\tom}[1]{\todo[color=blue!40, inline]{\footnotesize{Tom: #1}}}
-% \newcommand{\alex}[1]{\todo[color=orange!40, inline]{\footnotesize{Alex: #1}}}
-% \newcommand{\john}[1]{\todo[color=green!40, inline]{\footnotesize{John: #1}}}
-% \newcommand{\ahmed}[1]{\todo[color=purple!40, inline]{\footnotesize{Ahmed: #1}}}
 
 
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
@@ -94,10 +81,10 @@
 \maketitle
 
 \begin{abstract}
-Software developers often need to create variants to accommodate different customer segments. These variants have a common code base but also comprise  variant-specific code. A common strategy to create a variant is to clone (or fork) an existing application and then adapt it to the new requirements. This form of reuse has been enhanced with the advent of social-coding platforms such as \gh, and package distribution platforms like \np. \gh offers facilities for forking, pull requests, and cross-project traceability. \np offers facilities for managing package release dependencies and dependents on the distribution platform. Little is known about the maintenance practices of the variants.
+Software developers often need to create variants to accommodate different customer segments. These variants have a common code base but also comprise  variant-specific code. A common strategy to create a variant is to clone\&own (or fork) an existing repository and then adapt it to the new requirements. This form of reuse has been enhanced with the advent of social-coding platforms such as \gh, and package distribution platforms like \np. \gh offers facilities for forking, pull requests, and cross-project traceability. \np offers facilities for managing package release dependencies and dependents on the distribution platform. Little is known about the maintenance practices of the variants.
 We therefore performed an exploratory investigation on the evolution of variants, focusing on their technical aspects. We collected variants from the \js ecosystem, whose sources are hosted on \gh, and whose packages are  released on npm. 
 We have identified a total 12,813 variant forks from the \js ecosystem. In general, we observed that mainlines have more number of package releases, package dependencies, dependent packages and dependent projects compared to their variant counterparts. 
-However, it is still interesting that some variants have quite a considerable number of package releases and dependent packages/projects; in a some cases even more than the mainline counterparts.
+However, it is still interesting that some variants have quite a considerable number of package releases and dependent packages/projects; in a some cases even more than their mainline counterparts.
 \end{abstract}
 
 \begin{IEEEkeywords}
